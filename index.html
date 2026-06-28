@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fashion Place Billo | Indian Ethnic Wear | Catonsville, MD</title>
+  <meta name="description" content="Fashion Place Billo (Lotte Bazaar) - Your one-stop Indian ethnic wear store in Catonsville, MD. Sarees, Punjabi Suits, Wedding Wear, Jewelry, Juttis & Custom Stitching." />
+  <meta name="keywords" content="Indian clothing store, desi store, Punjabi suits, saree shop, Indian boutique, ethnic wear, wedding dress, Catonsville MD, alteration, custom stitching" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; color: #3D2010; background: #FFFBF7; }
+
+    @keyframes pageFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes bounceIn { 0% { opacity: 0; transform: scale(0.7); } 60% { transform: scale(1.08); } 100% { opacity: 1; transform: scale(1); } }
+    @keyframes float { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-6px); } }
+    @keyframes glow { 0%,100% { box-shadow: 0 0 8px rgba(200,119,58,0.3); } 50% { box-shadow: 0 0 20px rgba(200,119,58,0.6); } }
+    @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+    @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+    .animate-fade { animation: fadeUp 0.6s ease forwards; }
+    .animate-bounce { animation: bounceIn 0.6s cubic-bezier(.36,.07,.19,.97) forwards; }
+    .delay-1 { animation-delay: 0.1s; opacity: 0; }
+    .delay-2 { animation-delay: 0.2s; opacity: 0; }
+    .delay-3 { animation-delay: 0.3s; opacity: 0; }
+    .delay-4 { animation-delay: 0.4s; opacity: 0; }
+    .delay-5 { animation-delay: 0.5s; opacity: 0; }
+    .delay-6 { animation-delay: 0.6s; opacity: 0; }
+
+    /* NAV */
+    nav { background: #FFF8F2; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f0ddd0; flex-wrap: wrap; gap: 8px; position: sticky; top: 0; z-index: 100; }
+    .nav-brand { color: #C8773A; font-size: 20px; font-weight: bold; animation: float 3s ease-in-out infinite; display: inline-block; }
+    .nav-sub { color: #b09080; font-size: 11px; }
+    .nav-links { display: flex; gap: 16px; flex-wrap: wrap; }
+    .nav-links a { color: #7a5c4a; font-size: 14px; text-decoration: none; cursor: pointer; position: relative; padding-bottom: 2px; transition: color 0.3s; }
+    .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px; background: #C8773A; transition: width 0.3s ease; }
+    .nav-links a:hover { color: #C8773A; }
+    .nav-links a:hover::after { width: 100%; }
+
+    /* PAGES */
+    .page { display: none; }
+    .page.active { display: block; animation: pageFade 0.5s ease; }
+
+    /* HERO */
+    .hero { background: #FFF3E8; padding: 60px 24px; text-align: center; border-bottom: 1px solid #f0ddd0; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(200,119,58,0.12) 0%, transparent 70%); border-radius: 50%; animation: pulse 3s ease-in-out infinite; }
+    .hero::after { content: ''; position: absolute; bottom: -40px; left: -40px; width: 160px; height: 160px; background: radial-gradient(circle, rgba(200,119,58,0.08) 0%, transparent 70%); border-radius: 50%; animation: pulse 4s ease-in-out infinite; }
+    .hero-badge { display: inline-block; background: #FDEBD7; color: #C8773A; font-size: 12px; padding: 5px 16px; border-radius: 20px; margin-bottom: 16px; border: 0.5px solid #f0c09a; animation: glow 2s ease-in-out infinite; }
+    .hero h1 { color: #3D2010; font-size: 36px; font-weight: bold; margin-bottom: 10px; animation: fadeUp 0.6s ease 0.1s both; }
+    .hero p { color: #7a5c4a; font-size: 16px; margin-bottom: 28px; line-height: 1.8; animation: fadeUp 0.6s ease 0.2s both; }
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; animation: fadeUp 0.6s ease 0.3s both; }
+    .btn-primary { background: #C8773A; color: #fff; padding: 12px 28px; border-radius: 8px; font-size: 15px; font-weight: bold; border: none; cursor: pointer; transition: all 0.3s; }
+    .btn-primary:hover { background: #a85e2a; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(200,119,58,0.4); }
+    .btn-secondary { background: #fff; color: #C8773A; border: 2px solid #C8773A; padding: 12px 28px; border-radius: 8px; font-size: 15px; cursor: pointer; transition: all 0.3s; }
+    .btn-secondary:hover { background: #FFF3E8; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(200,119,58,0.2); }
+    .divider { height: 3px; background: linear-gradient(90deg, #FDEBD7, #C8773A, #FDEBD7); background-size: 200% auto; animation: shimmer 2s linear infinite; }
+
+    /* SECTIONS */
+    .section { padding: 40px 24px; background: #FFFBF7; }
+    .section-alt { padding: 40px 24px; background: #FFF8F2; }
+    .section-title { font-size: 22px; font-weight: bold; text-align: center; margin-bottom: 6px; color: #3D2010; }
+    .section-sub { font-size: 14px; color: #a07860; text-align: center; margin-bottom: 24px; }
+
+    /* WHY CARDS */
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; }
+    .why-card { background: #fff; border: 0.5px solid #f0ddd0; border-radius: 12px; padding: 20px 14px; text-align: center; transition: all 0.3s ease; cursor: default; }
+    .why-card:hover { transform: translateY(-6px); box-shadow: 0 12px 28px rgba(200,119,58,0.15); border-color: #C8773A; }
+    .why-icon { font-size: 30px; margin-bottom: 10px; display: block; transition: transform 0.3s; }
+    .why-card:hover .why-icon { transform: scale(1.3) rotate(-5deg); }
+    .why-title { font-size: 14px; font-weight: bold; color: #3D2010; margin-bottom: 4px; }
+    .why-desc { font-size: 12px; color: #a07860; line-height: 1.5; }
+
+    /* COLLECTION GRID */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+    .card { background: #fff; border: 0.5px solid #f0ddd0; border-radius: 12px; overflow: hidden; transition: all 0.3s ease; cursor: default; }
+    .card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 12px 28px rgba(200,119,58,0.15); border-color: #C8773A; }
+    .card-img { height: 90px; display: flex; align-items: center; justify-content: center; font-size: 36px; transition: transform 0.3s; }
+    .card:hover .card-img { transform: scale(1.2); }
+    .card-body { padding: 12px; border-top: 0.5px solid #f0ddd0; }
+    .card-title { font-size: 14px; font-weight: bold; color: #3D2010; margin-bottom: 2px; }
+    .card-desc { font-size: 12px; color: #a07860; }
+
+    /* FESTIVALS */
+    .festival-section { padding: 40px 24px; background: #FFFBF7; }
+    .fest-group { margin-bottom: 24px; }
+    .fest-group-title { font-size: 13px; font-weight: bold; color: #fff; background: #C8773A; display: inline-block; padding: 5px 16px; border-radius: 20px; margin-bottom: 14px; animation: glow 2s ease-in-out infinite; }
+    .fest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; }
+    .fest-card { background: #fff; border: 0.5px solid #f0ddd0; border-radius: 10px; padding: 12px 14px; display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; cursor: default; }
+    .fest-card:hover { transform: translateX(6px); border-color: #C8773A; box-shadow: 0 4px 16px rgba(200,119,58,0.15); }
+    .fest-icon { font-size: 24px; flex-shrink: 0; transition: transform 0.3s; }
+    .fest-card:hover .fest-icon { transform: scale(1.3) rotate(10deg); }
+    .fest-name { font-size: 13px; font-weight: bold; color: #3D2010; }
+    .fest-wear { font-size: 11px; color: #a07860; margin-top: 2px; }
+    .fest-banner { background: linear-gradient(135deg, #FFF3E8, #FDEBD7); border: 0.5px solid #f0c09a; border-radius: 12px; padding: 20px; text-align: center; margin-top: 8px; animation: glow 3s ease-in-out infinite; }
+    .fest-banner p { font-size: 14px; color: #7a5c4a; line-height: 1.8; }
+    .fest-banner strong { color: #C8773A; }
+
+    /* SERVICES */
+    .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .service-card { background: #fff; border: 0.5px solid #f0ddd0; border-radius: 12px; padding: 22px 18px; transition: all 0.3s ease; }
+    .service-card:hover { transform: translateY(-8px); box-shadow: 0 16px 32px rgba(200,119,58,0.15); border-color: #C8773A; }
+    .service-card-icon { font-size: 36px; margin-bottom: 12px; display: block; transition: transform 0.3s; }
+    .service-card:hover .service-card-icon { transform: scale(1.2) rotate(-8deg); animation: float 2s ease-in-out infinite; }
+    .service-card-title { font-size: 16px; font-weight: bold; color: #3D2010; margin-bottom: 8px; }
+    .service-card-desc { font-size: 13px; color: #7a5c4a; line-height: 1.7; }
+    .service-tag { display: inline-block; background: #FDEBD7; color: #C8773A; font-size: 11px; padding: 3px 12px; border-radius: 20px; margin-top: 12px; border: 0.5px solid #f0c09a; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+    .step { background: #fff; border: 0.5px solid #f0ddd0; border-radius: 12px; padding: 16px 14px; text-align: center; transition: all 0.3s; }
+    .step:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(200,119,58,0.15); }
+    .step-num { width: 32px; height: 32px; background: #C8773A; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: bold; margin: 0 auto 10px; transition: transform 0.3s; }
+    .step:hover .step-num { transform: scale(1.2); animation: pulse 1s ease-in-out infinite; }
+    .step-title { font-size: 13px; font-weight: bold; color: #3D2010; margin-bottom: 4px; }
+    .step-desc { font-size: 12px; color: #a07860; }
+    .cta-box { background: #C8773A; border-radius: 12px; padding: 24px; text-align: center; margin-top: 20px; animation: glow 2s ease-in-out infinite; }
+    .cta-box h3 { color: #fff; font-size: 18px; font-weight: bold; margin-bottom: 8px; }
+    .cta-box p { color: #fde8d7; font-size: 13px; margin-bottom: 16px; }
+    .cta-btn { background: #fff; color: #C8773A; padding: 10px 24px; border-radius: 8px; font-size: 14px; font-weight: bold; text-decoration: none; display: inline-block; transition: all 0.3s; }
+    .cta-btn:hover { transform: scale(1.05); box-shadow: 0 4px 14px rgba(255,255,255,0.4); }
+
+    /* CONTACT */
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 20px; }
+    .info-card { background: #fff; border: 0.5px solid #f0ddd0; border-radius: 12px; padding: 18px; transition: all 0.3s; }
+    .info-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(200,119,58,0.12); border-color: #C8773A; }
+    .info-icon { font-size: 22px; margin-bottom: 10px; display: block; transition: transform 0.3s; }
+    .info-card:hover .info-icon { transform: scale(1.2); animation: float 2s ease-in-out infinite; }
+    .info-label { font-size: 12px; color: #a07860; margin-bottom: 4px; }
+    .info-val { font-size: 14px; color: #3D2010; font-weight: bold; line-height: 1.6; }
+    .hours-table { width: 100%; font-size: 13px; margin-top: 8px; }
+    .hours-table td { padding: 4px 0; color: #7a5c4a; }
+    .hours-table td:last-child { text-align: right; color: #3D2010; font-weight: bold; }
+    .map-box { background: #FFF3E8; border: 0.5px solid #f0ddd0; border-radius: 12px; height: 90px; display: flex; align-items: center; justify-content: center; margin-top: 14px; gap: 8px; font-size: 14px; color: #7a5c4a; transition: all 0.3s; }
+    .map-box:hover { border-color: #C8773A; box-shadow: 0 4px 16px rgba(200,119,58,0.15); }
+    .map-box a { color: #C8773A; text-decoration: none; font-weight: bold; }
+    .call-btn { display: inline-block; margin-top: 12px; background: #C8773A; color: #fff; padding: 7px 16px; border-radius: 8px; font-size: 13px; text-decoration: none; transition: all 0.3s; }
+    .call-btn:hover { transform: scale(1.05); background: #a85e2a; }
+    .insta-btn { display: inline-block; margin-top: 12px; background: #E1306C; color: #fff; padding: 7px 16px; border-radius: 8px; font-size: 13px; text-decoration: none; transition: all 0.3s; }
+    .insta-btn:hover { transform: scale(1.05); background: #c0254f; }
+
+    /* FOOTER */
+    footer { background: #3D2010; padding: 24px; text-align: center; }
+    footer p { color: #c9a090; font-size: 13px; line-height: 1.8; }
+    footer a { color: #FDEBD7; text-decoration: none; }
+    .footer-copy { color: #7a5c4a; font-size: 12px; margin-top: 8px; }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 24px; }
+      .nav-links { gap: 10px; }
+      .section, .section-alt, .festival-section { padding: 28px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div>
+      <div class="nav-brand">Fashion Place Billo</div>
+      <div class="nav-sub">Lotte Bazaar · Catonsville, MD</div>
+    </div>
+    <div class="nav-links">
+      <a onclick="showPage('home')">Home</a>
+      <a onclick="showPage('collection')">Collection</a>
+      <a onclick="showPage('services')">Services</a>
+      <a onclick="showPage('contact')">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HOME -->
+  <div class="page active" id="page-home">
+    <div class="hero">
+      <div class="hero-badge">Indian Ethnic Wear · Catonsville, MD</div>
+      <h1>Fashion Place Billo</h1>
+      <p>Your one-stop destination for authentic Indian ethnic wear.<br>Sarees · Punjabi Suits · Wedding Wear · Jewelry · Juttis<br>Alteration & Custom Stitching for everyone</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="showPage('collection')">View Collection</button>
+        <button class="btn-secondary" onclick="showPage('services')">Our Services</button>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="section-alt">
+      <div class="section-title">Why shop with us?</div>
+      <div class="section-sub">Trusted by the South Asian community in Maryland</div>
+      <div class="why-grid">
+        <div class="why-card animate-bounce delay-1"><span class="why-icon">🥻</span><div class="why-title">Huge collection</div><div class="why-desc">Sarees, suits, sherwanis & more</div></div>
+        <div class="why-card animate-bounce delay-2"><span class="why-icon">✂️</span><div class="why-title">Alteration & Stitching</div><div class="why-desc">Custom fit for everyone</div></div>
+        <div class="why-card animate-bounce delay-3"><span class="why-icon">👰</span><div class="why-title">Wedding wear</div><div class="why-desc">Full bridal collections</div></div>
+        <div class="why-card animate-bounce delay-4"><span class="why-icon">👨‍👩‍👧</span><div class="why-title">Whole family</div><div class="why-desc">Men, women & kids</div></div>
+      </div>
+    </div>
+    <div class="festival-section">
+      <div class="section-title">Dress up for every celebration</div>
+      <div class="section-sub">Special collections for every festival and occasion throughout the year</div>
+      <div class="fest-group">
+        <div class="fest-group-title">Festival Season</div>
+        <div class="fest-grid">
+          <div class="fest-card animate-fade delay-1"><div class="fest-icon">🪔</div><div><div class="fest-name">Diwali</div><div class="fest-wear">Sarees, lehengas & suits</div></div></div>
+          <div class="fest-card animate-fade delay-2"><div class="fest-icon">🎶</div><div><div class="fest-name">Navratri & Garba</div><div class="fest-wear">Chaniya choli & ghagra</div></div></div>
+          <div class="fest-card animate-fade delay-3"><div class="fest-icon">🌙</div><div><div class="fest-name">Eid</div><div class="fest-wear">Suits, sherwanis & sarees</div></div></div>
+          <div class="fest-card animate-fade delay-4"><div class="fest-icon">🌾</div><div><div class="fest-name">Baisakhi</div><div class="fest-wear">Punjabi suits & traditional wear</div></div></div>
+          <div class="fest-card animate-fade delay-5"><div class="fest-icon">🌸</div><div><div class="fest-name">Durga Puja</div><div class="fest-wear">Traditional sarees & suits</div></div></div>
+          <div class="fest-card animate-fade delay-6"><div class="fest-icon">🌈</div><div><div class="fest-name">Holi</div><div class="fest-wear">Colorful kurtas & suits</div></div></div>
+        </div>
+      </div>
+      <div class="fest-group">
+        <div class="fest-group-title">Wedding & Special Occasions</div>
+        <div class="fest-grid">
+          <div class="fest-card animate-fade delay-1"><div class="fest-icon">👰</div><div><div class="fest-name">Wedding</div><div class="fest-wear">Full bridal & groom collection</div></div></div>
+          <div class="fest-card animate-fade delay-2"><div class="fest-icon">💍</div><div><div class="fest-name">Engagement</div><div class="fest-wear">Lehengas & sherwanis</div></div></div>
+          <div class="fest-card animate-fade delay-3"><div class="fest-icon">🎊</div><div><div class="fest-name">Mehndi Night</div><div class="fest-wear">Colorful ethnic wear</div></div></div>
+          <div class="fest-card animate-fade delay-4"><div class="fest-icon">🌙</div><div><div class="fest-name">Karva Chauth</div><div class="fest-wear">Special occasion wear</div></div></div>
+          <div class="fest-card animate-fade delay-5"><div class="fest-icon">🎀</div><div><div class="fest-name">Raksha Bandhan</div><div class="fest-wear">Suits & sarees</div></div></div>
+          <div class="fest-card animate-fade delay-6"><div class="fest-icon">👶</div><div><div class="fest-name">Baby Shower</div><div class="fest-wear">Elegant ethnic wear</div></div></div>
+        </div>
+      </div>
+      <div class="fest-group">
+        <div class="fest-group-title">Everyday & Family Occasions</div>
+        <div class="fest-grid">
+          <div class="fest-card animate-fade delay-1"><div class="fest-icon">🎓</div><div><div class="fest-name">Graduation</div><div class="fest-wear">Smart ethnic wear</div></div></div>
+          <div class="fest-card animate-fade delay-2"><div class="fest-icon">🎂</div><div><div class="fest-name">Birthday Party</div><div class="fest-wear">Festive suits & dresses</div></div></div>
+          <div class="fest-card animate-fade delay-3"><div class="fest-icon">🏠</div><div><div class="fest-name">Family Gatherings</div><div class="fest-wear">Casual ethnic wear</div></div></div>
+          <div class="fest-card animate-fade delay-4"><div class="fest-icon">📸</div><div><div class="fest-name">Photoshoots</div><div class="fest-wear">Stunning traditional outfits</div></div></div>
+        </div>
+      </div>
+      <div class="fest-banner"><p>Whatever the occasion — <strong>Fashion Place Billo</strong> has the perfect outfit for you.<br>Visit us before every festival season for the <strong>best selection & new arrivals!</strong></p></div>
+    </div>
+  </div>
+
+  <!-- COLLECTION -->
+  <div class="page" id="page-collection">
+    <div class="section">
+      <div class="section-title">Our Collection</div>
+      <div class="section-sub">Authentic Indian ethnic wear for every occasion</div>
+      <div class="grid">
+        <div class="card animate-bounce delay-1"><div class="card-img" style="background:#fff3f0;">🥻</div><div class="card-body"><div class="card-title">Sarees</div><div class="card-desc">Silk, bridal & casual</div></div></div>
+        <div class="card animate-bounce delay-2"><div class="card-img" style="background:#fff8f0;">👗</div><div class="card-body"><div class="card-title">Punjabi Suits</div><div class="card-desc">Salwar kameez & churidars</div></div></div>
+        <div class="card animate-bounce delay-3"><div class="card-img" style="background:#f0f8ff;">👔</div><div class="card-body"><div class="card-title">Men's Kurtas</div><div class="card-desc">Kurtas & ethnic wear</div></div></div>
+        <div class="card animate-bounce delay-4"><div class="card-img" style="background:#f5f0ff;">🤵</div><div class="card-body"><div class="card-title">Sherwanis</div><div class="card-desc">Wedding & festive</div></div></div>
+        <div class="card animate-bounce delay-5"><div class="card-img" style="background:#fff0f5;">👰</div><div class="card-body"><div class="card-title">Wedding Wear</div><div class="card-desc">Lehengas & bridal sets</div></div></div>
+        <div class="card animate-bounce delay-6"><div class="card-img" style="background:#f0fff4;">💍</div><div class="card-body"><div class="card-title">Jewelry</div><div class="card-desc">Indian ethnic jewelry</div></div></div>
+        <div class="card animate-bounce delay-1"><div class="card-img" style="background:#fffbf0;">👡</div><div class="card-body"><div class="card-title">Punjabi Juttis</div><div class="card-desc">Traditional footwear</div></div></div>
+        <div class="card animate-bounce delay-2"><div class="card-img" style="background:#fff0fa;">👶</div><div class="card-body"><div class="card-title">Kids Wear</div><div class="card-desc">Ethnic wear for kids</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="page" id="page-services">
+    <div class="section">
+      <div class="section-title">Alteration & Custom Stitching</div>
+      <div class="section-sub">Perfect fit guaranteed — for any outfit, any occasion, for everyone</div>
+      <div class="service-grid">
+        <div class="service-card animate-bounce delay-1"><span class="service-card-icon">✂️</span><div class="service-card-title">Alteration</div><div class="service-card-desc">Resize, shorten, lengthen or reshape any outfit to fit you perfectly. Works on sarees, suits, kurtas and more.</div><div class="service-tag">Available for all</div></div>
+        <div class="service-card animate-bounce delay-2"><span class="service-card-icon">🧵</span><div class="service-card-title">Custom Stitching</div><div class="service-card-desc">Bring your own fabric or pick from our collection. We stitch to your exact measurements and style.</div><div class="service-tag">Custom orders welcome</div></div>
+        <div class="service-card animate-bounce delay-3"><span class="service-card-icon">👗</span><div class="service-card-title">Blouse Stitching</div><div class="service-card-desc">Custom blouse stitching for sarees. Any design, any neckline, perfectly tailored to you.</div><div class="service-tag">Bridal & casual</div></div>
+        <div class="service-card animate-bounce delay-4"><span class="service-card-icon">🤵</span><div class="service-card-title">Men's Tailoring</div><div class="service-card-desc">Kurta, sherwani & suit alterations for men. Perfect fit for weddings, festivals & everyday wear.</div><div class="service-tag">Men's specialty</div></div>
+      </div>
+    </div>
+    <div class="section-alt">
+      <div class="section-title">How it works</div>
+      <div class="section-sub">Simple 4-step process</div>
+      <div class="steps">
+        <div class="step animate-fade delay-1"><div class="step-num">1</div><div class="step-title">Visit the store</div><div class="step-desc">Come in with your outfit or fabric</div></div>
+        <div class="step animate-fade delay-2"><div class="step-num">2</div><div class="step-title">Consultation</div><div class="step-desc">We discuss your style & preferences</div></div>
+        <div class="step animate-fade delay-3"><div class="step-num">3</div><div class="step-title">Measurements</div><div class="step-desc">Precise measurements taken</div></div>
+        <div class="step animate-fade delay-4"><div class="step-num">4</div><div class="step-title">Pick up</div><div class="step-desc">Collect your perfectly fitted outfit</div></div>
+      </div>
+      <div class="cta-box">
+        <h3>Ready to get the perfect fit?</h3>
+        <p>Visit us at Baltimore National Pike, Catonsville MD or give us a call</p>
+        <a href="tel:4439852089" class="cta-btn">Call (443) 985-2089</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="page" id="page-contact">
+    <div class="section">
+      <div class="section-title">Visit Us</div>
+      <div class="section-sub">We would love to see you in store!</div>
+      <div class="contact-grid">
+        <div class="info-card animate-bounce delay-1"><span class="info-icon">📍</span><div class="info-label">Address</div><div class="info-val">Baltimore National Pike<br>Catonsville, MD 21228<br><span style="color:#a07860;font-size:12px;font-weight:normal;">One Mile West</span></div></div>
+        <div class="info-card animate-bounce delay-2"><span class="info-icon">📞</span><div class="info-label">Phone</div><div class="info-val">(443) 985-2089</div><a href="tel:4439852089" class="call-btn">Call Now</a></div>
+        <div class="info-card animate-bounce delay-3"><span class="info-icon">🕐</span><div class="info-label">Store Hours</div><table class="hours-table"><tr><td>Sunday</td><td>11:30 AM – 7 PM</td></tr><tr><td>Monday</td><td>11 AM – 8 PM</td></tr><tr><td>Tue – Fri</td><td>11:30 AM – 8 PM</td></tr><tr><td>Saturday</td><td>12 AM – 9 PM</td></tr></table></div>
+        <div class="info-card animate-bounce delay-4"><span class="info-icon">📱</span><div class="info-label">Follow Us</div><div class="info-val">Stay updated on new arrivals & offers</div><a href="https://www.instagram.com/fashionplacebillo/" class="insta-btn">Instagram</a></div>
+      </div>
+      <div class="map-box">📍 Baltimore National Pike, Catonsville MD &nbsp;<a href="https://maps.google.com/?q=Baltimore+National+Pike+Catonsville+MD+21228">Open in Google Maps</a></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Fashion Place Billo (Lotte Bazaar)<br>Baltimore National Pike, Catonsville, MD 21228 &nbsp;|&nbsp; <a href="tel:4439852089">(443) 985-2089</a></p>
+    <div class="footer-copy">© 2025 Fashion Place Billo. All rights reserved.</div>
+  </footer>
+
+  <script>
+    function showPage(name) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('page-' + name).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
